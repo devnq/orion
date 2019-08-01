@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.time.LocalDateTime;
 
-import static java.time.LocalDateTime.*;
+import static java.time.LocalDateTime.now;
 
 public class RegisterAndCreateEventTest extends AbstractChromeTest {
 
@@ -20,22 +20,25 @@ public class RegisterAndCreateEventTest extends AbstractChromeTest {
     private EventsPage eventsPage;
 
     @Test
-    public void register() {
+    public void registerAndCreateEvent() {
+        // Arrange
         final Faker faker = new Faker();
         final String name = faker.name().fullName();
         final String username = faker.name().username();
         final String password = faker.internet().password();
+        final String eventTitle = faker.book().title();
+        final String eventDescription = faker.lorem().paragraphs(3)
+            .toString();
+        final LocalDateTime eventDate = now().plusDays(1);
+
+        // Act
         goTo(loginPage)
             .registerAndLoginWith(username, name, password)
             .click(newEventPage.navLink);
-
-        final String eventTitle = faker.book().title();
-        final String eventDescription = faker.lorem().paragraphs(3).toString();
-        final LocalDateTime eventDate = now().plusDays(1);
-
         newEventPage
             .registerEvent(eventTitle, eventDescription, eventDate);
 
+        // Assert
         eventsPage
             .waitForEvents()
             .assertSeeEvent(eventTitle, eventDescription);
