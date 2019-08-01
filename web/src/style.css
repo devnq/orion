@@ -1,0 +1,21 @@
+section:first-of-type {
+    margin-top: 4rem;
+}
+
+.validation-error {
+    margin: 0;
+    color: red
+}
+
+.error + input {
+    border-bottom-color: red !important;
+}
+
+card p.attr {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+card p strong {
+    color: #777777;
+}
