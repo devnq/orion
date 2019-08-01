@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "New User",
+  "description": "Registers user access with the system",
+  "type": "object",
+  "properties": {
+    "username": {
+      "description": "A unique, case-insensitive identifier for the user",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 256
+    },
+    "name": {
+      "description": "The users name",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 256
+    },
+    "password": {
+      "description": "The users password",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 256
+    }
+  },
+  "required": [
+    "username",
+    "name",
+    "password"
+  ]
+}

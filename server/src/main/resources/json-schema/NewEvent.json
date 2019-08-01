@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "New Event",
+  "description": "Registers a new event",
+  "type": "object",
+  "properties": {
+    "title": {
+      "description": "The title of the event",
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 256
+    },
+    "description": {
+      "description": "The description of the event",
+      "type": "string",
+      "minLength": 2
+    },
+    "epoch": {
+      "description": "The epoch timestamp (UTC in seconds) of the events start time",
+      "type": "number",
+      "multipleOf": 1
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "epoch"
+  ]
+}
