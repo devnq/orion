@@ -17,7 +17,7 @@ function Register (API, cancel, registrationComplete) {
 
   return {
     view: () => (
-      <form onsubmit={submit}>
+      <form class='register' onsubmit={submit}>
         <h3>Register</h3>
         <label htmlFor='username'>Username</label>
         {renderErrors(errors, '#/username')}

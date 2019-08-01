@@ -24,7 +24,7 @@ function Login (API, register) {
   return {
     onremove: reset,
     view: (vnode) => (
-      <form onsubmit={submit}>
+      <form class='login' onsubmit={submit}>
         {hideTitle(vnode) ? null : m('h3', 'Login')}
         <label htmlFor='username'>Username</label>
         <input id='username'
@@ -37,11 +37,13 @@ function Login (API, register) {
         <input id='password' name='password' type='password' placeholder='Password'/>
         {renderErrors(errors, '#')}
         <button primary m-full col='1/1' type='submit'>Login</button>
-        <button m-full
-                col='1/1'
-                type='button'
-                onclick={register}
-                style={vnode.attrs.user ? "display: none" : null}>Sign Up
+        <button
+          m-full
+          col='1/1'
+          type='button'
+          onclick={register}
+          style={vnode.attrs.user ? "display: none" : null}>
+          Sign Up
         </button>
       </form>
     )

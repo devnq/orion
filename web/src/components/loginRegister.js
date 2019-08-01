@@ -34,20 +34,19 @@ function LoginRegister (API) {
   return {
     onremove: reset,
     view: () => (
-      <section>
-        <grid>
-          <div col='1/2' style='margin-left:25%'>
-            {renderUser()}
+      <grid>
+        <div col='1/4'></div>
+        <div col='1/2'>
+          {renderUser()}
 
-            {isLogin
-              ? m(login, {
-                user,
-                hideTitle: nonNil(user)
-              })
-              : m(register)}
-          </div>
-        </grid>
-      </section>
+          {isLogin
+            ? m(login, {
+              user,
+              hideTitle: nonNil(user)
+            })
+            : m(register)}
+        </div>
+      </grid>
     )
   }
 }

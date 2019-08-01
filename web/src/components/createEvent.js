@@ -28,7 +28,7 @@ function RegisterEvent (API, registrationComplete) {
     requireAuth: true,
     onremove: reset,
     view: () => (
-      <form onsubmit={submit}>
+      <form class='new-event' onsubmit={submit}>
         <h3>New Event</h3>
         <grid>
           <div col='3/4'>
