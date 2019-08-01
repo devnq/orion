@@ -1,0 +1,14 @@
+target
+bin
+.DS_Store
+.classpath
+.project
+.settings
+.metadata
+*.iml
+.idea
+*~
+nbactions.xml
+nb-configuration.xml
+dependency-reduced-pom.xml
+node_modules
