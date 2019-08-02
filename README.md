@@ -2,6 +2,8 @@
 
 A practical demonstration of Software Testing in a Web App and RESTful Service.
 
+![](./splash.png)
+
 ## Server
 
 [README](server/README.md)
